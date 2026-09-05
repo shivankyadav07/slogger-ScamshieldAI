@@ -1,0 +1,13 @@
+{
+  "name": "scamshield-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ScamShield AI rule-based scam detection app with a separated frontend and backend",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node --watch backend/src/server.js",
+    "test": "node --test backend/test/*.test.js"
+  },
+  "engines": { "node": ">=18" }
+}

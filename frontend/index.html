@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScamShield AI</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar"><div class="brand"><span class="brand-mark">+</span><span>ScamShield <em>AI</em></span></div><span class="status"><span class="status-dot"></span>Protection online</span></header>
+      <section class="intro"><p class="eyebrow">Message intelligence / 01</p><h1>Pause before<br /><span>you trust.</span></h1><p class="lede">Paste a suspicious message and let ScamShield identify the signals that deserve a second look.</p></section>
+      <section class="workspace">
+        <form id="analysis-form" class="message-panel"><div class="panel-heading"><label for="message">Message to inspect</label><span id="character-count">0 / 2,000</span></div><textarea id="message" maxlength="2000" placeholder="Congratulations! You won ₹50,000..." required></textarea><div class="form-footer"><span class="hint">Your message stays in this session.</span><button type="submit"><span>Analyze message</span><span class="arrow">↗</span></button></div></form>
+        <aside id="result-panel" class="result-panel empty" aria-live="polite"><div class="result-placeholder"><span class="scan-icon">◎</span><p>Awaiting a message</p><small>Your analysis will appear here.</small></div></aside>
+      </section>
+      <footer><span>SCAMSHIELD AI</span><span>Rule-based analysis · v1.0</span></footer>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
