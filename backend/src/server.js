@@ -66,6 +66,10 @@ function createServer() {
       handleAnalysis(request, response);
       return;
     }
+    if (request.method === 'GET' && requestPath === '/health') {
+      sendJson(response, 200, { status: 'ok' });
+      return;
+    }
     if (request.method === 'GET') {
       serveFrontend(request, response);
       return;

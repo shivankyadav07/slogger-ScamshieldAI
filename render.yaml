@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: scamshield-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node backend/src/server.js
+    healthCheckPath: /health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: MAX_MESSAGE_LENGTH
+        value: "2000"
+
+  - type: web
+    name: scamshield-frontend
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: scamshield-backend
+          property: host

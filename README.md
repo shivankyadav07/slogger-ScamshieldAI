@@ -23,6 +23,7 @@ ScamShield AI is a small rule-based scam message detector. The browser frontend 
 │   ├── postcss.config.mjs
 │   └── tailwind.config.ts
 ├── .env.example
+├── render.yaml             # Render deployment blueprint
 ├── package.json
 └── README.md
 ```
@@ -60,6 +61,15 @@ Then open http://127.0.0.1:3001. The frontend proxies `/api/*` requests to the b
 | `npm run frontend:start` | Start the production Next.js frontend |
 
 ## API
+
+## Deploy on Render
+
+1. Push the repository to GitHub.
+2. In Render, choose **New → Blueprint** and select the repository.
+3. Render reads `render.yaml` and creates the backend and frontend services.
+4. Open the URL for `scamshield-frontend` after deployment.
+
+The backend binds to Render's assigned port and exposes `/health`. The frontend receives the backend URL through `BACKEND_URL` and proxies `/api/*` requests to it.
 
 ### `POST /api/analyze`
 
