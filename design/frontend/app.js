@@ -7,6 +7,9 @@ const score = document.querySelector('#score');
 const riskLabel = document.querySelector('#risk-label');
 const signalList = document.querySelector('#signal-list');
 const criticalWarning = document.querySelector('#critical-warning');
+const gaugeProgress = document.querySelector('#gauge-progress');
+const gaugePointer = document.querySelector('#gauge-pointer');
+const gaugeLength = 298.45;
 
 messageInput.addEventListener('input', () => {
   characterCount.textContent = `${messageInput.value.length.toLocaleString()} / 2,000`;
@@ -38,8 +41,9 @@ function renderResult({ riskScore, level, foundWords }) {
   const colors = { high: '#ff3468', suspicious: '#f5a623', low: '#00e08f' };
   const labels = { high: 'HIGH RISK', suspicious: 'MODERATE RISK', low: 'LOW RISK' };
   const color = colors[level] || colors.low;
-  gauge.style.setProperty('--score', `${riskScore * 1.8}deg`);
   gauge.style.setProperty('--gauge-color', color);
+  gaugeProgress.style.strokeDashoffset = `${gaugeLength - (gaugeLength * riskScore) / 100}`;
+  gaugePointer.style.transform = `rotate(${riskScore * 1.8 - 90}deg)`;
   score.textContent = riskScore;
   riskLabel.textContent = labels[level];
   riskLabel.className = `risk-badge ${level}`;

@@ -31,8 +31,8 @@
           </form>
 
           <aside id="result-panel" class="result-card empty" aria-live="polite">
-            <div class="card-heading"><h2>Live assessment</h2><span id="risk-label" class="risk-badge">AWAITING SCAN</span></div>
-            <div class="gauge-wrap"><div id="gauge" class="gauge"><div class="gauge-inner"><strong id="score">--</strong><span>/100</span></div></div><span class="gauge-caption">STRIKE RATE</span></div>
+            <div class="card-heading"><h2>Live assessment</h2></div>
+            <div class="assessment-visual"><span id="risk-label" class="risk-badge">AWAITING SCAN</span><div class="gauge-wrap"><div id="gauge" class="gauge" role="img" aria-label="Risk score gauge"><svg viewBox="0 0 240 140" aria-hidden="true"><path class="gauge-track" d="M 25 120 A 95 95 0 0 1 215 120"></path><path id="gauge-progress" class="gauge-progress" d="M 25 120 A 95 95 0 0 1 215 120"></path></svg><span id="gauge-pointer" class="gauge-pointer"></span></div><span class="gauge-caption">RISK SCORE</span></div><div class="score-display"><strong id="score">--</strong><span>/100</span></div></div>
             <div class="rule"></div>
             <div class="signals"><p>FLAGGED THREAT VECTOR LABELS</p><ul id="signal-list"><li class="muted">No threat vectors flagged yet - run an analysis.</li></ul></div>
             <div id="critical-warning" class="critical-warning" hidden><span aria-hidden="true">⚠</span><p><strong>Critical warning: </strong>Do not follow this link. It contains a domain designed to look like a trusted financial portal.</p></div>
