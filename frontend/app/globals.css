@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0c0d12;
+  --muted: #686b78;
+  --line: #e7e8ec;
+  --night: #0a0b12;
+  --black: #05060b;
+  --green: #00e08f;
+  --pink: #ff3468;
+  --amber: #f5a623;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: white; color: var(--ink); font-family: Georgia, 'Times New Roman', serif; }
+button, textarea { font: inherit; }
+
+.gauge-track, .gauge-progress { fill: none; stroke-linecap: round; stroke-width: 15; }
+.gauge-track { stroke: #20222d; }
+.gauge-progress { stroke: var(--gauge-color); stroke-dasharray: 298.45; stroke-dashoffset: 298.45; transition: stroke-dashoffset .6s ease, stroke .4s ease; }
+.gauge-pointer { background: white; border-radius: 4px 4px 1px 1px; bottom: 18px; height: 51px; left: calc(50% - 2px); position: absolute; transform-origin: 2px calc(100% - 2px); transition: transform .6s ease; width: 4px; }
+.gauge-pointer::after { background: var(--gauge-color); border: 3px solid var(--night); border-radius: 50%; bottom: -7px; content: ''; height: 12px; left: -4px; position: absolute; width: 12px; }
+
+@media (max-width: 700px) {
+  .main-nav { display: none; }
+}

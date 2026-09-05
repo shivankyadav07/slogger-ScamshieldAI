@@ -7,7 +7,10 @@
   "scripts": {
     "start": "node backend/src/server.js",
     "dev": "node --watch backend/src/server.js",
-    "test": "node --test backend/test/*.test.js"
+    "test": "node --test backend/test/*.test.js",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:start": "npm --prefix frontend run start"
   },
   "engines": { "node": ">=18" }
 }
